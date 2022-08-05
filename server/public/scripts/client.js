@@ -19,7 +19,8 @@ function addTaskToDatabase() {
         type: 'POST',
         url: '/tasks',
         data: {
-            taskDescription: $('#task-input').val()
+            taskDescription: $('#task-input').val(),
+            complete: false
         }
     }).then( function (response) {
         console.log(response);
