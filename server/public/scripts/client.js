@@ -21,7 +21,7 @@ function addTaskToDatabase() {
     }).then( function (response) {
         console.log(response);
         displayTasks();
-        // clearInputs();
+        clearInputs();
     }).catch( function (error) {
         console.log(error);
         alert('Something went wrong. Please try again.');
@@ -56,3 +56,10 @@ function displayTasks() {
         alert('Something went wrong. Please try again.');
     });
 } // end displayTasks
+
+// clear input field after 'add task' button is clicked
+
+function clearInputs() {
+    console.log('in clearInputs');
+    $('#task-input').val('');
+} // end clearInputs
