@@ -3,11 +3,18 @@ const router = express.Router();
 
 const tasks = [];
 
+// GET
+router.get('/', (req, res) => {
+    res.send(tasks);
+});
+
+// POST
 router.post('/', (req, res) => {
     const taskToAdd = req.body;
     console.log('new task:', taskToAdd);
     tasks.push(taskToAdd);
     console.log('task array:', tasks);
+    res.sendStatus(200);
 });
 
 
