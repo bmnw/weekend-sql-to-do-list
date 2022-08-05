@@ -4,7 +4,10 @@ $(readyNow);
 
 function readyNow() {
     console.log('ready now');
+    displayTasks();
     $('#task-submit').on('click', addTaskToDatabase);
+    $('body').on('click', '.complete-submit', taskComplete);
+    $('body').on('click', '.delete-submit', taskDelete);
 }
 
 // post request sending user input task to database
@@ -63,3 +66,16 @@ function clearInputs() {
     console.log('in clearInputs');
     $('#task-input').val('');
 } // end clearInputs
+
+function taskComplete() {
+    console.log('in taskComplete');
+    // eventually at PUT request, or maybe a POST? to server/database
+    $(this).replaceWith('✅');
+}
+
+function taskDelete() {
+    console.log('in taskDelete');
+    // only removed from the DOM
+    $(this).parent().parent().remove();
+    // future delete request to server/database
+}

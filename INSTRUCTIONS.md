@@ -46,6 +46,9 @@ We would recommend you spend some time thinking about how to approach this probl
 - [x] input field for new task entry
 
 - [x] write server.js code directing requests at /tasks to task.router.js
+- [x] create post request in client.js and task.router.js
+- [x] create get request in client.js and task.router.js
+- [x] create function to empty input field once task is submitted
 
 ### Create a Database
 
