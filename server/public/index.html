@@ -1,0 +1,45 @@
+<html>
+
+    <head>
+        <title>To-Do List</title>
+        <script src="vendors/jquery.js"></script>
+        <script src="scripts/client.js"></script>
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+
+    <body>
+
+        <header>
+            <h1>To-Do or To-Don't: Track it here!</h1>
+        </header>
+
+        <div id="user-entry">
+            <input id="task-input" placeholder="What do you need to get done?" type="text">
+            <button id="task-submit">Add Task</button>
+        </div>
+
+        <table id="task-table">
+            <caption>Things To Do</caption>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Yes! Done.</th>
+                    <th>Nevermind.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Make lunch</td>
+                    <td>
+                        <button class="complete-submit">Completed it!</button>
+                    </td>
+                    <td>
+                        <button class="delete-submit">Delete Task</button>
+                    </td>
+                </tr>
+            </tbody>
+            
+        </table>
+
+    </body>
+</html>
