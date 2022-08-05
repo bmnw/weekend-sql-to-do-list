@@ -45,7 +45,7 @@ We would recommend you spend some time thinking about how to approach this probl
 - [x] include complete and delete buttons with each entry
 - [x] input field for new task entry
 
-- [] write server.js code directing requests at /tasks to task.router.js
+- [x] write server.js code directing requests at /tasks to task.router.js
 
 ### Create a Database
 
