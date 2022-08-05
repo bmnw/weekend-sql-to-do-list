@@ -5,3 +5,24 @@ body {
 #task-input {
     width: 300px;
 }
+
+.task-des-display {
+    max-width: 300px;
+}
+
+#task-header {
+    width: 300px;
+}
+
+.submit-header {
+    width: 100px;
+}
+
+[data-complete="false"] {
+    background-color: lightblue;
+}
+
+[data-complete="true"] {
+    background-color: lightgreen;
+}
+

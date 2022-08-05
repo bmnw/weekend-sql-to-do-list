@@ -44,8 +44,8 @@ function displayTasks() {
         $('#task-list').empty();
         for(let task of response){
             $('#task-list').append(`
-                <tr>
-                    <td>${task.taskDescription}</td>
+                <tr data-complete="false">
+                    <td class="task-des-display">${task.taskDescription}</td>
                     <td>
                         <button class="complete-submit">Completed it!</button>
                     </td>
@@ -71,6 +71,12 @@ function clearInputs() {
 function taskComplete() {
     console.log('in taskComplete');
     // eventually at PUT request, or maybe a POST? to server/database
+    let isComplete = $(this).parent().parent().data('complete');
+    // need a way to preserve that a task has been completed
+    console.log('complete?', isComplete); // false
+    isComplete = true;
+    console.log('complete?', isComplete); // true
+    $(this).parent().parent().css("background-color", "lightgreen");
     $(this).replaceWith('✅');
 }
 
