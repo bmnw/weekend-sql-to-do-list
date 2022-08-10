@@ -47,7 +47,7 @@ function displayTasks() {
                 <tr data-complete="false">
                     <td class="task-des-display">${task.task_description}</td>
                     <td>
-                        <button class="complete-submit">Completed it!</button>
+                        <button class="complete-submit" data-id=${task.id}>Completed it!</button>
                     </td>
                     <td>
                         <button class="delete-submit" data-id=${task.id}>Delete Task</button>
@@ -70,12 +70,23 @@ function clearInputs() {
 
 function taskComplete() {
     console.log('in taskComplete');
-    // eventually at PUT request, or maybe a POST? to server/database
-    let isComplete = $(this).parent().parent().data('complete');
-    // need a way to preserve that a task has been completed
-    console.log('complete?', isComplete); // false
-    isComplete = true;
-    console.log('complete?', isComplete); // true
+    const taskID = $(this).data('id');
+    console.log('taskID:', taskID);
+    $.ajax({
+        type: 'PUT',
+        url: `/tasks/${taskID}`
+    }).then( function(response) {
+        console.log(response);
+        displayTasks();
+    }).catch( function(error) {
+        console.log(error);
+        alert('Something went wrong. Please try again.');
+    });
+    // let isComplete = $(this).parent().parent().data('complete');
+    // // need a way to preserve that a task has been completed
+    // console.log('complete?', isComplete); // false
+    // isComplete = true;
+    // console.log('complete?', isComplete); // true
     $(this).parent().parent().css("background-color", "lightgreen");
     $(this).replaceWith('✅');
 } // end taskComplete
@@ -96,5 +107,4 @@ function taskDelete() {
         console.log(error);
         alert('Something went wrong. Please try again.');
     });
-    // $(this).parent().parent().remove();
 } // end taskDelete

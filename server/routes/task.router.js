@@ -49,7 +49,20 @@ router.delete('/:id', (req, res) => {
         });
 });
 
+// PUT
 
+router.put('/:id', (req, res) => {
+    console.log('in PUT');
+    const queryText = `UPDATE "tasks" SET "complete" = true WHERE "id" = $1;`
+    pool.query(queryText, [req.params.id])
+        .then((result) => {
+            res.send(200);
+        })
+        .catch((error) => {
+            console.log('ERROR in PUT /tasks', error);
+            res.sendStatus(500);
+        });
+});
 
 
 
