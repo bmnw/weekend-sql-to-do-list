@@ -45,7 +45,7 @@ function displayTasks() {
         for(let task of response){
             $('#task-list').append(`
                 <tr data-complete="false">
-                    <td class="task-des-display">${task.taskDescription}</td>
+                    <td class="task-des-display">${task.task_description}</td>
                     <td>
                         <button class="complete-submit">Completed it!</button>
                     </td>
