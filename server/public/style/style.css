@@ -56,6 +56,15 @@ header {
     border-color: red;
 }
 
+.complete-submit {
+    font-size: 17px;
+    font-family: 'american typewriter', serif;
+}
+
+.complete-submit:hover {
+    background-color: lightgreen;
+}
+
 td {
     padding: 2px;
     text-align: center;
