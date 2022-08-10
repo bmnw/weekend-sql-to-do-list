@@ -44,7 +44,7 @@ function displayTasks() {
         $('#task-list').empty();
         for(let task of response){
             $('#task-list').append(`
-                <tr data-complete="false">
+                <tr data-complete=${task.complete}>
                     <td class="task-des-display">${task.task_description}</td>
                     <td>
                         <button class="complete-submit" data-id=${task.id}>Completed it!</button>
@@ -71,24 +71,20 @@ function clearInputs() {
 function taskComplete() {
     console.log('in taskComplete');
     const taskID = $(this).data('id');
+    const dataComplete = $(this).parent().parent().data('complete');
     console.log('taskID:', taskID);
+    console.log('data-complete', dataComplete);
     $.ajax({
         type: 'PUT',
         url: `/tasks/${taskID}`
     }).then( function(response) {
         console.log(response);
         displayTasks();
+        // $(this).replaceWith('✅');
     }).catch( function(error) {
         console.log(error);
         alert('Something went wrong. Please try again.');
     });
-    // let isComplete = $(this).parent().parent().data('complete');
-    // // need a way to preserve that a task has been completed
-    // console.log('complete?', isComplete); // false
-    // isComplete = true;
-    // console.log('complete?', isComplete); // true
-    $(this).parent().parent().css("background-color", "lightgreen");
-    $(this).replaceWith('✅');
 } // end taskComplete
 
 // delete request to remove a task from the database
