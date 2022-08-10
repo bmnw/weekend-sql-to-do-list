@@ -24,9 +24,16 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const taskToAdd = req.body;
     console.log('new task:', taskToAdd);
-    tasks.push(taskToAdd);
-    console.log('task array:', tasks);
-    res.sendStatus(200);
+    const queryText =   `INSERT INTO "tasks" ("task_description")
+                        VALUES ($1);` // the value for "complete" will default to false in the database
+    pool.query(queryText, [taskToAdd.taskDescription])
+        .then((result) => {
+            console.log(result);
+            res.send(200);
+        })
+        .catch((error) => {
+            console.log('ERROR IN POST /tasks', error);
+        });
 });
 
 
