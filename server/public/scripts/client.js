@@ -43,17 +43,31 @@ function displayTasks() {
         console.log(response);
         $('#task-list').empty();
         for(let task of response){
-            $('#task-list').append(`
-                <tr data-complete=${task.complete}>
-                    <td class="task-des-display">${task.task_description}</td>
-                    <td>
-                        <button class="complete-submit" data-id=${task.id}>Completed it!</button>
-                    </td>
-                    <td>
-                        <button class="delete-submit" data-id=${task.id}>Delete Task</button>
-                    </td>
-                </tr>
-            `);
+            if(task.complete === false) {
+                $('#task-list').append(`
+                    <tr data-complete=${task.complete}>
+                        <td class="task-des-display">${task.task_description}</td>
+                        <td>
+                            <button class="complete-submit" data-id=${task.id}>Completed it!</button>
+                        </td>
+                        <td>
+                            <button class="delete-submit" data-id=${task.id}>Delete Task</button>
+                        </td>
+                    </tr>
+                `);
+            } else if(task.complete === true) {
+                $('#task-list').append(`
+                    <tr data-complete=${task.complete}>
+                        <td class="task-des-display">${task.task_description}</td>
+                        <td>
+                            ✅
+                        </td>
+                        <td>
+                            <button class="delete-submit" data-id=${task.id}>Delete Task</button>
+                        </td>
+                    </tr>
+                `);
+            }
         }
     }).catch(function (error) {
         console.log(error);
