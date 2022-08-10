@@ -20,7 +20,7 @@ function addTaskToDatabase() {
         url: '/tasks',
         data: {
             taskDescription: $('#task-input').val(),
-            complete: false
+            // complete: false // in the database the default value for "complete" is false, user input is needed to change that to true
         }
     }).then( function (response) {
         console.log(response);
@@ -50,7 +50,7 @@ function displayTasks() {
                         <button class="complete-submit">Completed it!</button>
                     </td>
                     <td>
-                        <button class="delete-submit">Delete Task</button>
+                        <button class="delete-submit" data-id=${task.id}>Delete Task</button>
                     </td>
                 </tr>
             `);
@@ -78,11 +78,23 @@ function taskComplete() {
     console.log('complete?', isComplete); // true
     $(this).parent().parent().css("background-color", "lightgreen");
     $(this).replaceWith('✅');
-}
+} // end taskComplete
+
+// delete request to remove a task from the database
 
 function taskDelete() {
     console.log('in taskDelete');
-    // only removed from the DOM
-    $(this).parent().parent().remove();
-    // future delete request to server/database
-}
+    const taskID = $(this).data('id');
+    console.log('taskID:', taskID);
+    $.ajax({
+        type: 'DELETE',
+        url: `/tasks/${taskID}`
+    }).then( function(response) {
+        console.log(response);
+        displayTasks();
+    }).catch( function(error){
+        console.log(error);
+        alert('Something went wrong. Please try again.');
+    });
+    // $(this).parent().parent().remove();
+} // end taskDelete
