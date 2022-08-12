@@ -16,12 +16,19 @@ function readyNow() {
 function addTaskToDatabase() {
     // for right now, this will add task to array in task.router.js
     console.log('in addTaskToDatabase');
+    let date = new Date();
+    console.log('date:', date);
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    let currentDate = `${year}/${month}/${day}`;
+    console.log('currentDate:', currentDate);
     $.ajax({
         type: 'POST',
         url: '/tasks',
         data: {
             taskDescription: $('#task-input').val(),
-            complete: false
+            date_submitted: currentDate
             // complete: false // in the database the default value for "complete" is false, user input is needed to change that to true
         }
     }).then( function (response) {

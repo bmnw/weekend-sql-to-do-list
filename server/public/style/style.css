@@ -51,6 +51,11 @@ header {
     font-family: 'american typewriter', serif;
 }
 
+.mark-as-not-complete {
+    font-size: 17px;
+    font-family: 'american typewriter', serif;
+}
+
 .delete-submit:hover {
     background-color: red;
     border-color: red;
