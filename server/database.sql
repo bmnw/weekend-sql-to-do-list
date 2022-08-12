@@ -2,7 +2,9 @@
 CREATE TABLE tasks (
 	"id" serial PRIMARY KEY,
 	"task_description" varchar(200),
-	"complete" boolean
+	"complete" boolean,
+	"date_submitted" date,
+	"due_date" date
 );
 
 -- insert a new task

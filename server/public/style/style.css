@@ -46,6 +46,18 @@ header {
     background-color: lightgreen;
 }
 
+[data-priority="low"] {
+    background-color: green;
+}
+
+[data-priority="medium"] {
+    background-color: yellow;
+}
+
+[data-priority="high"] {
+    background-color: red;
+}
+
 .delete-submit {
     font-size: 17px;
     font-family: 'american typewriter', serif;

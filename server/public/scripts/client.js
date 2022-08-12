@@ -29,7 +29,8 @@ function addTaskToDatabase() {
         data: {
             taskDescription: $('#task-input').val(),
             date_submitted: currentDate,
-            due_date: $('#due-date-input').val()
+            due_date: $('#due-date-input').val(),
+            priority: $('#priority-input').val()
             // complete: false // in the database the default value for "complete" is false, user input is needed to change that to true
         }
     }).then( function (response) {
@@ -62,7 +63,7 @@ function displayTasks() {
                     <tr data-complete=${task.complete}>
                         <td>${formattedDueDate}</td>
                         <td class="task-des-display">${task.task_description}</td>
-                        <td>Priority</td>
+                        <td data-priority="${task.priority}">${task.priority}</td>
                         <td>
                             <button class="complete-submit" data-id=${task.id}>Completed it!</button>
                         </td>
@@ -77,7 +78,7 @@ function displayTasks() {
                     <tr data-complete=${task.complete}>
                         <td>${formattedDueDate}</td>
                         <td class="task-des-display">${task.task_description}</td>
-                        <td>Priority</td>
+                        <td data-priority="${task.priority}">${task.priority}</td>
                         <td>
                             ✅
                         </td>
