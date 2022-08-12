@@ -28,7 +28,8 @@ function addTaskToDatabase() {
         url: '/tasks',
         data: {
             taskDescription: $('#task-input').val(),
-            date_submitted: currentDate
+            date_submitted: currentDate,
+            due_date: $('#due-date-input').val()
             // complete: false // in the database the default value for "complete" is false, user input is needed to change that to true
         }
     }).then( function (response) {
@@ -95,6 +96,7 @@ function displayTasks() {
 function clearInputs() {
     console.log('in clearInputs');
     $('#task-input').val('');
+    $('#due-date-input').val('');
 } // end clearInputs
 
 // delete request to remove a task from the database
