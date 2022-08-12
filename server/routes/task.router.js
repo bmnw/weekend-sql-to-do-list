@@ -22,9 +22,9 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const taskToAdd = req.body;
     console.log('new task:', taskToAdd);
-    const queryText =   `INSERT INTO "tasks" ("task_description")
-                        VALUES ($1);` // the value for "complete" will default to false in the database
-    pool.query(queryText, [taskToAdd.taskDescription])
+    const queryText =   `INSERT INTO "tasks" ("task_description", "complete")
+                        VALUES ($1, $2);` // the value for "complete" will default to false in the database
+    pool.query(queryText, [taskToAdd.taskDescription, taskToAdd.complete])
         .then((result) => {
             console.log(result);
             res.send(200);
@@ -53,8 +53,17 @@ router.delete('/:id', (req, res) => {
 
 router.put('/:id', (req, res) => {
     console.log('in PUT');
-    const queryText = `UPDATE "tasks" SET "complete" = true WHERE "id" = $1;`
-    pool.query(queryText, [req.params.id])
+    let taskID = req.params.id;
+    let complete = req.body.complete;
+    console.log(complete);
+    let queryText = '';
+    if(complete === 'true'){
+        queryText = `UPDATE "tasks" SET "complete" = false WHERE "id" = $1;`
+    } else if(complete === 'false' || complete === 'undefined'){
+        queryText = `UPDATE "tasks" SET "complete" = true WHERE "id" = $1;`
+    }
+    console.log('queryText', queryText);
+    pool.query(queryText, [taskID])
         .then((result) => {
             res.send(200);
         })

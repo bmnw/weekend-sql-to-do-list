@@ -8,6 +8,7 @@ function readyNow() {
     $('#task-submit').on('click', addTaskToDatabase);
     $('body').on('click', '.complete-submit', taskComplete);
     $('body').on('click', '.delete-submit', taskDelete);
+    $('body').on('click', '.mark-as-not-complete', markAsNotComplete);
 }
 
 // post request sending user input task to database
@@ -20,6 +21,7 @@ function addTaskToDatabase() {
         url: '/tasks',
         data: {
             taskDescription: $('#task-input').val(),
+            complete: false
             // complete: false // in the database the default value for "complete" is false, user input is needed to change that to true
         }
     }).then( function (response) {
@@ -66,7 +68,7 @@ function displayTasks() {
                             ✅
                         </td>
                         <td>
-                            <button class="mark-as-not-complete" data-id="tbd">Not Done Yet</button>
+                            <button class="mark-as-not-complete" data-id="${task.id}">Not Done Yet</button>
                         </td>
                         <td>
                             <button class="delete-submit" data-id=${task.id}>Delete Task</button>
@@ -88,25 +90,6 @@ function clearInputs() {
     $('#task-input').val('');
 } // end clearInputs
 
-function taskComplete() {
-    console.log('in taskComplete');
-    const taskID = $(this).data('id');
-    const dataComplete = $(this).parent().parent().data('complete');
-    console.log('taskID:', taskID);
-    console.log('data-complete', dataComplete);
-    $.ajax({
-        type: 'PUT',
-        url: `/tasks/${taskID}`
-    }).then( function(response) {
-        console.log(response);
-        displayTasks();
-        // $(this).replaceWith('✅');
-    }).catch( function(error) {
-        console.log(error);
-        alert('Something went wrong. Please try again.');
-    });
-} // end taskComplete
-
 // delete request to remove a task from the database
 
 function taskDelete() {
@@ -124,3 +107,47 @@ function taskDelete() {
         alert('Something went wrong. Please try again.');
     });
 } // end taskDelete
+
+function taskComplete() {
+    console.log('in taskComplete');
+    const taskID = $(this).data('id');
+    const dataComplete = $(this).parent().parent().data('complete');
+    console.log('taskID:', taskID);
+    console.log('data-complete', dataComplete);
+    $.ajax({
+        type: 'PUT',
+        url: `/tasks/${taskID}`,
+        data: {
+            complete: dataComplete
+        }
+    }).then( function(response) {
+        console.log(response);
+        displayTasks();
+        // $(this).replaceWith('✅');
+    }).catch( function(error) {
+        console.log(error);
+        alert('Something went wrong. Please try again.');
+    });
+} // end taskComplete
+
+// PUT request to change selected task from complete to not complete in the database
+
+function markAsNotComplete() {
+    console.log('in markAsNotComplete');
+    const taskID = $(this).data('id');
+    console.log('taskID:', taskID);
+    const dataComplete = $(this).parent().parent().data('complete');
+    console.log('data-complete', dataComplete);
+    $.ajax({
+        type: 'PUT',
+        url: `/tasks/${taskID}`,
+        data: {
+            complete: dataComplete
+        }
+    }).then( function(repsonse) {
+        displayTasks();
+    }).catch( function (error) {
+        console.log(error);
+        alert('Something went wrong. Please try again.');
+    });
+} // end markAsNotComplete
