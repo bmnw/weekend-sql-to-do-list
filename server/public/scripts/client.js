@@ -53,9 +53,14 @@ function displayTasks() {
         console.log(response);
         $('#task-list').empty();
         for(let task of response){
+            let dueDate = new Date(task.due_date);
+            let formattedDueDate = dueDate.toLocaleDateString('en-us', {weekday:'short', month:'long', day: 'numeric', year: 'numeric'});
+            console.log('formattedDueDate:', formattedDueDate);
+            // console.log('dueDate:', dueDate);
             if(task.complete === false) {
                 $('#task-list').append(`
                     <tr data-complete=${task.complete}>
+                        <td>${formattedDueDate}</td>
                         <td class="task-des-display">${task.task_description}</td>
                         <td>Priority</td>
                         <td>
@@ -70,6 +75,7 @@ function displayTasks() {
             } else if(task.complete === true) {
                 $('#task-list').append(`
                     <tr data-complete=${task.complete}>
+                        <td>${formattedDueDate}</td>
                         <td class="task-des-display">${task.task_description}</td>
                         <td>Priority</td>
                         <td>

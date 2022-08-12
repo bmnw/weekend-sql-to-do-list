@@ -7,7 +7,7 @@ const pool = require('../modules/pool.js');
 router.get('/', (req, res) => {
     console.log('in GET /tasks');
     // the query to run
-    const queryText = 'SELECT * FROM "tasks";';
+    const queryText = 'SELECT * FROM "tasks" ORDER BY "due_date";';
     // use pool to run the query
     pool.query(queryText).then((result) => {
         console.log('SELECT SUCCESS', result);
