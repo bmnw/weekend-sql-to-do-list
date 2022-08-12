@@ -49,6 +49,9 @@ We would recommend you spend some time thinking about how to approach this probl
 - [x] create post request in client.js and task.router.js
 - [x] create get request in client.js and task.router.js
 - [x] create function to empty input field once task is submitted
+- [x] put request tied to completed it! button with click handler that changes complete to true in database and changes the value of data-complete to true, which changes the css styling of the row
+- [x] delete request tied to delete button with clicken handler that removes task from the database
+- [x] basic css styling
 
 ### Create a Database
 
@@ -81,3 +84,14 @@ For each of your strech goals, you will be practicing git branching. Please refe
 - `feature-time-completed` 
 
     - [ ]  Add the ability to record when a task was completed. Show the completed date on the frontend in a pretty format.
+
+## Features to try for
+
+- [] optional user input: indicate low, medium, or high priority for the task, include green, yellow, red graphic as the indicator on the DOM
+- [] show when a task is completed and include completed date as a property in the database
+- [] have database capture the date that a task was added, include the added date as a property in the database
+- [] optional user input: task due date, displays on the DOM, include as database property
+- [] compare due date to current date and indicate graphically on the DOM whether the task is overdue
+- [] confirm delete feature
+- [] mark as not complete button
+- [] check out bootstrap

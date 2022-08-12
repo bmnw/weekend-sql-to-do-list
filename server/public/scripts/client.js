@@ -47,9 +47,11 @@ function displayTasks() {
                 $('#task-list').append(`
                     <tr data-complete=${task.complete}>
                         <td class="task-des-display">${task.task_description}</td>
+                        <td>Priority</td>
                         <td>
                             <button class="complete-submit" data-id=${task.id}>Completed it!</button>
                         </td>
+                        <td></td>
                         <td>
                             <button class="delete-submit" data-id=${task.id}>Delete Task</button>
                         </td>
@@ -59,8 +61,12 @@ function displayTasks() {
                 $('#task-list').append(`
                     <tr data-complete=${task.complete}>
                         <td class="task-des-display">${task.task_description}</td>
+                        <td>Priority</td>
                         <td>
                             ✅
+                        </td>
+                        <td>
+                            <button class="mark-as-not-complete" data-id="tbd">Not Done Yet</button>
                         </td>
                         <td>
                             <button class="delete-submit" data-id=${task.id}>Delete Task</button>
