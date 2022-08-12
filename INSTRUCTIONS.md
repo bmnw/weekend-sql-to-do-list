@@ -87,7 +87,7 @@ For each of your strech goals, you will be practicing git branching. Please refe
 
 ## Features to try for
 
-- [] optional user input: indicate low, medium, or high priority for the task, include green, yellow, red graphic as the indicator on the DOM
+- [x] optional user input: indicate low, medium, or high priority for the task, include green, yellow, red graphic as the indicator on the DOM
 - [] show date a task is completed and include completed date as a property in the database
 - [x] have database capture the date that a task was added, include the added date as a property in the database
 - [x] optional user input: task due date, included as database property,  displays on the DOM,

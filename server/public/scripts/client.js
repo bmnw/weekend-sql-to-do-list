@@ -104,6 +104,7 @@ function clearInputs() {
     console.log('in clearInputs');
     $('#task-input').val('');
     $('#due-date-input').val('');
+    $('#priority-input').val('');
 } // end clearInputs
 
 // delete request to remove a task from the database
@@ -139,7 +140,6 @@ function taskComplete() {
     }).then( function(response) {
         console.log(response);
         displayTasks();
-        // $(this).replaceWith('✅');
     }).catch( function(error) {
         console.log(error);
         alert('Something went wrong. Please try again.');

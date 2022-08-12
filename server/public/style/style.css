@@ -46,15 +46,15 @@ header {
     background-color: lightgreen;
 }
 
-[data-priority="low"] {
+[data-priority="low"], [data-priority="Low"] {
     background-color: green;
 }
 
-[data-priority="medium"] {
+[data-priority="medium"], [data-priority="Medium"] {
     background-color: yellow;
 }
 
-[data-priority="high"] {
+[data-priority="high"], [data-priority="High"] {
     background-color: red;
 }
 
