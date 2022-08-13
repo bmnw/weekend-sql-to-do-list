@@ -5,10 +5,22 @@ $(readyNow);
 function readyNow() {
     console.log('ready now');
     displayTasks();
+    $('.priority-level').on('click', selectPriorityLevel);
     $('#task-submit').on('click', addTaskToDatabase);
     $('body').on('click', '.complete-submit', taskComplete);
     $('body').on('click', '.delete-submit', taskDelete);
     $('body').on('click', '.mark-as-not-complete', markAsNotComplete);
+}
+
+// capturing the priority level selected by the user for the added task
+
+let priorityLevel = '';
+
+function selectPriorityLevel() {
+    console.log('in selectPriorityLevel');
+    priorityLevel = $(this).data('priority');
+    console.log(priorityLevel);
+    return priorityLevel;
 }
 
 // post request sending user input task to database
@@ -30,7 +42,7 @@ function addTaskToDatabase() {
             taskDescription: $('#task-input').val(),
             date_submitted: currentDate,
             due_date: $('#due-date-input').val(),
-            priority: $('#priority-input').val()
+            priority: priorityLevel
             // complete: false // in the database the default value for "complete" is false, user input is needed to change that to true
         }
     }).then( function (response) {
