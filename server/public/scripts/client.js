@@ -21,20 +21,29 @@ function selectPriorityLevel() {
     priorityLevel = $(this).data('priority');
     console.log(priorityLevel);
     return priorityLevel;
-}
+} // end selectPriorityLevel
 
-// post request sending user input task to database
+// capture the date that a task is submitted
 
-function addTaskToDatabase() {
-    // for right now, this will add task to array in task.router.js
-    console.log('in addTaskToDatabase');
+let currentDate = '';
+
+function getCurrentDate() {
+    console.log('in getCurrentDate');
     let date = new Date();
     console.log('date:', date);
     let day = date.getDate();
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
-    let currentDate = `${year}/${month}/${day}`;
-    console.log('currentDate:', currentDate);
+    currentDate = `${year}/${month}/${day}`;
+    console.log(currentDate);
+    return currentDate;
+} // end getCurrentDate
+
+// post request sending user input task to database
+
+function addTaskToDatabase() {
+    console.log('in addTaskToDatabase');
+    getCurrentDate();
     $.ajax({
         type: 'POST',
         url: '/tasks',
@@ -43,7 +52,6 @@ function addTaskToDatabase() {
             date_submitted: currentDate,
             due_date: $('#due-date-input').val(),
             priority: priorityLevel
-            // complete: false // in the database the default value for "complete" is false, user input is needed to change that to true
         }
     }).then( function (response) {
         console.log(response);
