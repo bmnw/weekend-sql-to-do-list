@@ -5,10 +5,11 @@ $(readyNow);
 function readyNow() {
     console.log('ready now');
     displayTasks();
+    swal("Hello world!");
     $('.priority-level').on('click', selectPriorityLevel);
     $('#task-submit').on('click', addTaskToDatabase);
     $('body').on('click', '.complete-submit', taskComplete);
-    $('body').on('click', '.delete-submit', taskDelete);
+    $('body').on('click', '.delete-submit', taskToDelete);
     $('body').on('click', '.mark-as-not-complete', markAsNotComplete);
 }
 
@@ -142,11 +143,21 @@ function clearInputs() {
     $('#priority-input').val('');
 } // end clearInputs
 
+// capture the id of the task to be deleted
+
+let taskID = 0;
+
+function taskToDelete() {
+    console.log('in taskToDelete');
+    taskID = $(this).data('id');
+    console.log('taskID:', taskID);
+    confirmDeleteTask();
+}
+
 // delete request to remove a task from the database
 
 function taskDelete() {
     console.log('in taskDelete');
-    const taskID = $(this).data('id');
     console.log('taskID:', taskID);
     $.ajax({
         type: 'DELETE',
@@ -159,6 +170,28 @@ function taskDelete() {
         alert('Something went wrong. Please try again.');
     });
 } // end taskDelete
+
+// using sweetalert to ask the user to confirm that the selected task should be deleted
+
+function confirmDeleteTask(){
+    console.log('in confirmDeleteTask');
+    swal({
+        title: "Are you sure you want to delete this task?",
+        text: "It will be gone forever!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true
+    }).then((willDelete) => {
+        if(willDelete) {
+            swal("Task deleted!", {
+                icon: "success",
+            });
+            taskDelete();
+        } else {
+            swal("The task remains. Good catch!");
+        }
+    });
+}
 
 function taskComplete() {
     console.log('in taskComplete');
