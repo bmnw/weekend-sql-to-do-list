@@ -4,6 +4,7 @@ $(readyNow);
 
 function readyNow() {
     console.log('ready now');
+    checkForOverdueTasks();
     displayTasks();
     $('.priority-level').on('click', selectPriorityLevel);
     $('#task-submit').on('click', addTaskToDatabase);
@@ -81,7 +82,7 @@ function displayTasks() {
             if(task.complete === false) {
                 $('#task-list').append(`
                     <tr data-complete=${task.complete}>
-                        <td>${formattedDueDate}</td>
+                        <td data-overdue="${task.overdue}">${formattedDueDate}</td>
                         <td class="task-des-display">${task.task_description}</td>
                         <td data-priority="${task.priority}">${task.priority}</td>
                         <td>
@@ -96,7 +97,7 @@ function displayTasks() {
             } else if(task.complete === true) {
                 $('#task-list').append(`
                     <tr data-complete=${task.complete}>
-                        <td>${formattedDueDate}</td>
+                        <td data-overdue="${task.overdue}>${formattedDueDate}</td>
                         <td class="task-des-display">${task.task_description}</td>
                         <td data-priority="${task.priority}">${task.priority}</td>
                         <td>
@@ -117,6 +118,21 @@ function displayTasks() {
         alert('Something went wrong. Please try again.');
     });
 } // end displayTasks
+
+// put request that checks to see if any of the tasks are overdue
+
+function checkForOverdueTasks() {
+    console.log('in checkForOverdueTasks');
+    $.ajax({
+        type: 'PUT',
+        url: '/overdue'
+    }).then( function(response) {
+        console.log(response);
+    }).catch( function(error) {
+        console.log(error);
+        alert('Something went wrong in checking for overdue tasks.');
+    });
+} // end checkForOverdueTasks
 
 // clear input field after 'add task' button is clicked
 

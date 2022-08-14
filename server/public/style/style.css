@@ -1,10 +1,20 @@
 body {
-    background-color: pink;
+    background-color: lightyellow;
     font-family: 'american typewriter', serif;
 }
 
 header {
     font-size: 30px;
+}
+
+#due-date-input {
+    font-size: 17px;
+    font-family: 'american typewriter', serif;
+}
+
+.priority-level {
+    font-size: 17px;
+    font-family: 'american typewriter', serif;
 }
 
 #task-input {
@@ -46,15 +56,23 @@ header {
     background-color: lightgreen;
 }
 
-[data-priority="low"], [data-priority="Low"] {
+[data-overdue="false"] {
+    background-color: lightslategray;
+}
+
+[data-overdue="true"] {
+    background-color: darkseagreen;
+}
+
+[data-priority="low"] {
     background-color: green;
 }
 
-[data-priority="medium"], [data-priority="Medium"] {
+[data-priority="medium"] {
     background-color: yellow;
 }
 
-[data-priority="high"], [data-priority="High"] {
+[data-priority="high"] {
     background-color: red;
 }
 
