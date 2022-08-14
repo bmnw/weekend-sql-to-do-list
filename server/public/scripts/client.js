@@ -96,7 +96,7 @@ function displayTasks() {
             } else if(task.complete === true) {
                 $('#task-list').append(`
                     <tr data-complete=${task.complete}>
-                        <td data-overdue="${task.overdue}>${formattedDueDate}</td>
+                        <td data-overdue="${task.overdue}">${formattedDueDate}</td>
                         <td class="task-des-display">${task.task_description}</td>
                         <td data-priority="${task.priority}">${task.priority}</td>
                         <td>

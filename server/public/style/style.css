@@ -5,11 +5,20 @@ body {
 
 header {
     font-size: 30px;
+    color: #274D5B;
+    text-shadow: 2px 2px 5px #274D5B;
+}
+
+#user-entry {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 #due-date-input {
-    font-size: 17px;
+    font-size: 20px;
     font-family: 'american typewriter', serif;
+    background-color: lightyellow;
 }
 
 .priority-level {
@@ -21,10 +30,16 @@ header {
     width: 400px;
     font-size: 20px;
     font-family: 'american typewriter', serif;
+    background-color: lightyellow;
+}
+
+#task-submit {
+    background-color: #46988E;
+    border-color: #46988E;
 }
 
 #task-submit:hover {
-    background-color: gold;
+    background-color: #C6F5CB;
 }
 
 #task-submit {
@@ -53,27 +68,31 @@ header {
 }
 
 [data-complete="true"] {
-    background-color: lightgreen;
+    background-color: #C7F3B5;
 }
 
 [data-overdue="false"] {
-    background-color: lightslategray;
+    background-color: none;
 }
 
 [data-overdue="true"] {
-    background-color: darkseagreen;
+    background-color: #B694F0;
+    font-weight: bold;
 }
 
 [data-priority="low"] {
-    background-color: green;
+    background-color: #F8E181;
+    border-color: #F8E181;
 }
 
 [data-priority="medium"] {
-    background-color: yellow;
+    background-color: #FAAC6A;
+    border-color: #FAAC6A;
 }
 
 [data-priority="high"] {
-    background-color: red;
+    background-color: #D46D4F;
+    border-color: #D46D4F;
 }
 
 .delete-submit {
@@ -87,8 +106,8 @@ header {
 }
 
 .delete-submit:hover {
-    background-color: red;
-    border-color: red;
+    background-color: #D61A20;
+    border-color: #D61A20;
 }
 
 .complete-submit {
@@ -97,7 +116,8 @@ header {
 }
 
 .complete-submit:hover {
-    background-color: lightgreen;
+    background-color: #37993C;
+    border-color: #37993C;
 }
 
 td {
