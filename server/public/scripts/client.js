@@ -4,7 +4,6 @@ $(readyNow);
 
 function readyNow() {
     console.log('ready now');
-    checkForOverdueTasks();
     displayTasks();
     $('.priority-level').on('click', selectPriorityLevel);
     $('#task-submit').on('click', addTaskToDatabase);
@@ -68,6 +67,7 @@ function addTaskToDatabase() {
 
 function displayTasks() {
     console.log('in displayTasks');
+    checkForOverdueTasks();
     $.ajax({
         type: 'GET',
         url: '/tasks'
@@ -78,7 +78,6 @@ function displayTasks() {
             let dueDate = new Date(task.due_date);
             let formattedDueDate = dueDate.toLocaleDateString('en-us', {weekday:'short', month:'long', day: 'numeric', year: 'numeric'});
             console.log('formattedDueDate:', formattedDueDate);
-            // console.log('dueDate:', dueDate);
             if(task.complete === false) {
                 $('#task-list').append(`
                     <tr data-complete=${task.complete}>

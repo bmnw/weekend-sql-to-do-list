@@ -7,6 +7,17 @@ const pool = require('../modules/pool.js');
 
 router.put('/', (req, res) => {
     console.log('in PUT /overdue');
+    let queryText = `UPDATE "tasks"
+                    SET "overdue" = true 
+                    WHERE "todays_date" > "due_date";`
+    pool.query(queryText)
+        .then((result) => {
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log('ERROR in PUT /overdue', error);
+            res.sendStatus(500);
+        });
 });
 
 
