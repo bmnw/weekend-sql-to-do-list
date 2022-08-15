@@ -150,6 +150,11 @@ th {
     text-align: center;
     background-color: lightgray;
     padding: 4px;
+    border-bottom: 4px solid #274D5B;
+}
+
+tr {
+    border-bottom: 2px solid #274D5B;
 }
 
 #table-content {
