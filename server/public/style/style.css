@@ -85,12 +85,12 @@ h5 {
     width: 150px;
 }
 
-[data-complete="false"] {
+/* [data-complete="false"] {
     background-color: lightblue;
-}
+} */
 
 [data-complete="true"] {
-    background-color: #C7F3B5;
+    background-color: white !important;
 }
 
 [data-overdue="false"] {
@@ -148,13 +148,22 @@ td {
 th {
     font-size: 20px;
     text-align: center;
-    background-color: lightgray;
+    background-color: grey;
+    color: white;
     padding: 4px;
     border-bottom: 4px solid #274D5B;
 }
 
 tr {
     border-bottom: 2px solid #274D5B;
+}
+
+tr:nth-child(even) {
+    background-color: #dcdcdc;
+}
+
+tr:nth-child(odd) {
+    background-color: #bfc1c2;
 }
 
 #table-content {
