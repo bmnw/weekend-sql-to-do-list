@@ -117,7 +117,7 @@ function displayTasks() {
                             ✅
                         </td>
                         <td>
-                            <button type="button" class="btn btn-warning mark-as-not-complete" data-id="${task.id}">Not Done Yet</button>
+                            <button type="button" class="btn btn-info text-white mark-as-not-complete" data-id="${task.id}">Not Done Yet</button>
                         </td>
                         <td>
                             <button type="button" class="btn btn-danger delete-submit" data-id=${task.id}>Delete Task</button>
