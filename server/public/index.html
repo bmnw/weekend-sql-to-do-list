@@ -13,11 +13,11 @@
     <body>
 
         <header>
-            <h1>Track Your To-Do's!</h1>
+            <h1><kbd>Track Your To-Do's!</kbd></h1>
         </header>
         <div id="content">
 
-            <h5>* Denotes a required field</h5>
+            <h5><code>* Denotes a required field</code></h5>
 
             <div id="user-entry">
                 
@@ -25,38 +25,36 @@
                 <h3>*Due Date</h3>
                 <input id="due-date-input" placeholder="YYYY/MM/DD" type="text">
                 <h3>*Priority</h3>
-                <button type="button" class="btn btn-secondary priority-level" data-priority="low">Low</button>
-                <button type="button" class="btn btn-secondary priority-level" data-priority="medium">Medium</button>
-                <button type="button" class="btn btn-secondary priority-level" data-priority="high">High</button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary priority-level" data-priority="low">Low</button>
+                    <button type="button" class="btn btn-secondary priority-level" data-priority="medium">Medium</button>
+                    <button type="button" class="btn btn-secondary priority-level" data-priority="high">High</button>
+                </div>
                 <!-- <input id="priority-input" placeholder="Low, Medium, High" type="text"> -->
-                <button type="button" class="btn btn-primary btn-lg" id="task-submit">Add Task</button>
             </div>
 
-            <table id="task-table">
-                <!-- <caption>Things To Do</caption> -->
-                <thead>
-                    <tr>
-                        <th id="due-date-header">Due Date</th>
-                        <th id="task-header">Task</th>
-                        <th class="priority-header">Priority</th>
-                        <th class="submit-header">Yes! Done.</th>
-                        <th class="submit-header">Mark as Not Done</th>
-                        <th class="submit-header">Nevermind.</th>
-                        
-                    </tr>
-                </thead>
-                <tbody id="task-list">
-                    <tr>
-                        <td class="task-des-display">Make lunch</td>
-                        <td>
-                            <button class="complete-submit">Completed it!</button>
-                        </td>
-                        <td>
-                            <button class="delete-submit">Delete Task</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div id="task-submit-button">
+                <button type="button" class="btn btn-primary btn-lg" id="task-submit">Add Task</button>
+            </div>    
+
+            <div id="table-content">
+                <table class="table-lg" id="task-table">
+                    <!-- <caption>Things To Do</caption> -->
+                    <thead>
+                        <tr>
+                            <th id="due-date-header">Due Date</th>
+                            <th id="task-header">Task</th>
+                            <th class="priority-header">Priority</th>
+                            <th class="submit-header">Yes! Done.</th>
+                            <th class="submit-header">Mark as Not Done</th>
+                            <th class="submit-header">Nevermind.</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody id="task-list">
+                    </tbody>
+                </table>
+            </div>
         </div>
     </body>
 </html>

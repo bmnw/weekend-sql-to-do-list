@@ -82,10 +82,10 @@ header {
     background-color: none;
 }
 
-[data-overdue="true"] {
-    background-color: #B694F0;
+/* [data-overdue="true"] {
+    background-color: red;
     font-weight: bold;
-}
+} */
 
 [data-priority="low"] {
     background-color: #F8E181;
@@ -134,14 +134,20 @@ td {
 
 th {
     font-size: 20px;
+    text-align: center;
 }
+
+/* #table-content {
+    display: flex;
+    justify-content: center;
+} */
 
 /* Copied from getboostrap.com responsive breakpoints documentation 
 to enable app to repond to changes in browser window size. */
 
  /* Small devices (landscape phones, 576px and up) */
  @media (min-width: 576px) { body {
-    background-color: olive;
+    background-color: rgb(132, 132, 36);
  } }
 
  /* Medium devices (tablets, 768px and up) */
@@ -156,5 +162,5 @@ to enable app to repond to changes in browser window size. */
  
  /* Extra large devices (large desktops, 1200px and up) */
  @media (min-width: 1200px) { body {
-    background-color: thistle;
+    background-color: tan;
  } }

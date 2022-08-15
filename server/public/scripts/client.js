@@ -79,7 +79,21 @@ function displayTasks() {
             let dueDate = new Date(task.due_date);
             let formattedDueDate = dueDate.toLocaleDateString('en-us', {weekday:'short', month:'long', day: 'numeric', year: 'numeric'});
             console.log('formattedDueDate:', formattedDueDate);
-            if(task.complete === false) {
+            if(task.complete === false && task.overdue === true) {
+                $('#task-list').append(`
+                    <tr data-complete=${task.complete}>
+                        <td class="bg-danger text-white" data-overdue="${task.overdue}">${formattedDueDate}</td>
+                        <td class="task-des-display">${task.task_description} <span class="badge bg-danger">Overdue</span></td>
+                        <td data-priority="${task.priority}">${task.priority}</td>
+                        <td>
+                            <button type="button" class="btn btn-success complete-submit" data-id=${task.id}>Completed it!</button>
+                        </td>
+                        <td></td>
+                        <td>
+                            <button type="button" class="btn btn-danger delete-submit" data-id=${task.id}>Delete Task</button>
+                        </td>
+                    </tr>
+            `);} else if(task.complete === false) {
                 $('#task-list').append(`
                     <tr data-complete=${task.complete}>
                         <td data-overdue="${task.overdue}">${formattedDueDate}</td>
@@ -93,21 +107,20 @@ function displayTasks() {
                             <button type="button" class="btn btn-danger delete-submit" data-id=${task.id}>Delete Task</button>
                         </td>
                     </tr>
-                `);
-            } else if(task.complete === true) {
+            `);} else if(task.complete === true) {
                 $('#task-list').append(`
                     <tr data-complete=${task.complete}>
-                        <td data-overdue="${task.overdue}">${formattedDueDate}</td>
+                        <td>${formattedDueDate}</td>
                         <td class="task-des-display">${task.task_description}</td>
                         <td data-priority="${task.priority}">${task.priority}</td>
                         <td>
                             ✅
                         </td>
                         <td>
-                            <button class="mark-as-not-complete" data-id="${task.id}">Not Done Yet</button>
+                            <button type="button" class="btn btn-warning mark-as-not-complete" data-id="${task.id}">Not Done Yet</button>
                         </td>
                         <td>
-                            <button class="delete-submit" data-id=${task.id}>Delete Task</button>
+                            <button type="button" class="btn btn-danger delete-submit" data-id=${task.id}>Delete Task</button>
                         </td>
                     </tr>
                 `);
