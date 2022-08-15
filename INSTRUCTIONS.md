@@ -91,6 +91,6 @@ For each of your strech goals, you will be practicing git branching. Please refe
 - [x] have database capture the date that a task was added, include the added date as a property in the database
 - [x] user input: task due date, included as database property,  displays on the DOM,
 - [x] compare due date to current date and indicate graphically on the DOM whether the task is overdue - color change in due date table cell using data-duedate
-- [] confirm delete alert feature
+- [x] confirm delete alert feature
 - [x] mark as not complete button
 - [] check out bootstrap

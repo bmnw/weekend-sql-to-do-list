@@ -5,7 +5,7 @@ $(readyNow);
 function readyNow() {
     console.log('ready now');
     displayTasks();
-    swal("Hello world!");
+    // swal("Hello world!");
     $('.priority-level').on('click', selectPriorityLevel);
     $('#task-submit').on('click', addTaskToDatabase);
     $('body').on('click', '.complete-submit', taskComplete);

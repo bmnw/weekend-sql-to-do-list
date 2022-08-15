@@ -7,8 +7,12 @@ header {
     font-size: 30px;
     color: #274D5B;
     text-shadow: 2px 2px 5px #274D5B;
+    margin-left: 10px;
 }
 
+#content {
+    margin-left: 10px;
+}
 #user-entry {
     display: inline-flex;
     flex-wrap: wrap;
@@ -69,6 +73,7 @@ header {
 
 [data-complete="true"] {
     background-color: #C7F3B5;
+    --bs-text-opacity: .5;
 }
 
 [data-overdue="false"] {
@@ -128,3 +133,18 @@ td {
 th {
     font-size: 20px;
 }
+
+/* Copied from getboostrap.com responsive breakpoints documentation 
+to enable app to repond to changes in browser window size. */
+
+ /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { ... }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { ... }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { ... }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { ... }
