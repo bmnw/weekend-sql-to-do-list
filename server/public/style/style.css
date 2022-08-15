@@ -1,19 +1,26 @@
 body {
     background-color: lightyellow;
-    font-family: 'american typewriter', serif;
+    font-family:'Fira Code', monospace;
 }
 
 header {
     font-size: 30px;
     color: #274D5B;
-    /* text-shadow: 2px 2px 5px #274D5B; */
-    /* margin-left: 10px; */
     background-color: #DB917C;
     padding: 20px;
 }
 
-#content {
+h1 {
+    display: inline;
+    background-color: #274D5B;
+    padding: 5px;
     margin-left: 10px;
+    color: white;
+}
+
+h5 {
+    padding: 5px;
+    margin: 10px;
 }
 
 #user-entry {
@@ -28,19 +35,19 @@ header {
 
 #due-date-input {
     font-size: 17px;
-    font-family: 'american typewriter', serif;
+    font-family: 'Fira Code', monospace;
     /* background-color: lightyellow; */
 }
 
 .priority-level {
     font-size: 17px;
-    font-family: 'american typewriter', serif;
+    font-family: 'Fira Code', monospace;
 }
 
 #task-input {
     width: 400px;
     font-size: 17px;
-    font-family: 'american typewriter', serif;
+    font-family: 'Fira Code', monospace;
     /* background-color: lightyellow; */
 }
 
@@ -50,13 +57,16 @@ header {
 }
 
 #task-submit:hover {
-    background-color: #70a876;
-    border-color: #70a876;
+    /* background-color: #70a876;
+    border-color: #70a876; */
+    background-color: #274D5B;
+    border-color: #274D5B;
 }
 
 #task-submit {
     font-size: 20px;
-    font-family: 'american typewriter', serif;
+    font-family: 'Fira Code', monospace;
+    margin-left: 10px;
 }
 
 #user-entry {
@@ -81,7 +91,6 @@ header {
 
 [data-complete="true"] {
     background-color: #C7F3B5;
-    --bs-text-opacity: .5;
 }
 
 [data-overdue="false"] {
@@ -89,28 +98,31 @@ header {
 }
 
 [data-priority="low"] {
-    background-color: #F8E181;
-    border-color: #F8E181;
+    background-color: #FACF64;
+    border-color: #FACF64;
+    color: white;
 }
 
 [data-priority="medium"] {
     background-color: #FAAC6A;
     border-color: #FAAC6A;
+    color: white;
 }
 
 [data-priority="high"] {
     background-color: #D46D4F;
     border-color: #D46D4F;
+    color: white;
 }
 
 .delete-submit {
     font-size: 17px;
-    font-family: 'american typewriter', serif;
+    font-family: 'Fira Code', monospace;
 }
 
 .mark-as-not-complete {
     font-size: 17px;
-    font-family: 'american typewriter', serif;
+    font-family: 'Fira Code', monospace;
 }
 
 .delete-submit:hover {
@@ -120,7 +132,7 @@ header {
 
 .complete-submit {
     font-size: 17px;
-    font-family: 'american typewriter', serif;
+    font-family: 'Fira Code', monospace;
 }
 
 .complete-submit:hover {
@@ -137,11 +149,12 @@ th {
     font-size: 20px;
     text-align: center;
     background-color: lightgray;
-    border-bottom: #274D5B;
+    padding: 4px;
 }
 
 #table-content {
     padding: 10px;
+    margin-left: 20px;
 }
 
 /* Copied from getboostrap.com responsive breakpoints documentation 
@@ -149,7 +162,7 @@ to enable app to repond to changes in browser window size. */
 
  /* Small devices (landscape phones, 576px and up) */
  @media (min-width: 576px) { body {
-    background-color: rgb(132, 132, 36);
+    background-color: tan;
  } }
 
  /* Medium devices (tablets, 768px and up) */
@@ -159,7 +172,7 @@ to enable app to repond to changes in browser window size. */
  
  /* Large devices (desktops, 992px and up) */
  @media (min-width: 992px) { body {
-    background-color: lightgrey;
+    background-color: tan;
  } }
  
  /* Extra large devices (large desktops, 1200px and up) */

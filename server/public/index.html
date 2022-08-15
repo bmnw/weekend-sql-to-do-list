@@ -13,28 +13,26 @@
     <body>
 
         <header class="shadow p-3 mb-5 bg-#DB917C rounded">
-            <h1><kbd>Track Your To-Do's!</kbd></h1>
-            
+            <h1 class="shadow p-2 mb-5 bg-lightgrey rounded">Track Your To-Do's!</h1>
             <div id="content">
 
                 <h5><code>* Denotes a required field</code></h5>
 
-                <div id="user-entry">
-                    <div class="input-group mb-3 w-50">
-                        <span class="input-group-text">*What's Next?</span>
-                        <input id="task-input" placeholder="one thing at a time" type="text" class="form-control">
-                    </div>
+                <div id="user-entry" class="container">
+                        <div class="input-group mb-3 w-50">
+                                <span class="input-group-text">*What's Next?</span>
+                                <input id="task-input" placeholder="one thing at a time" type="text" class="form-control">
+                        </div>
                     <div class="input-group mb-3 w-25">
                         <span class="input-group-text">*Due Date</span>
                         <input id="due-date-input" placeholder="yyyy/mm/dd" type="text" class="form-control">
                     </div>
-                    <div id="priority-group">
-                        <!-- <h3>*Priority</h3> -->
-                        <span class="input-group-text">*Priority</span>
+                    <div id="priority-group input-group">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-secondary priority-level" data-priority="low">Low</button>
-                            <button type="button" class="btn btn-secondary priority-level" data-priority="medium">Medium</button>
-                            <button type="button" class="btn btn-secondary priority-level" data-priority="high">High</button>
+                            <span class="input-group-text">*Priority</span>
+                            <button type="button" class="btn btn-secondary priority-level" data-priority="low">low</button>
+                            <button type="button" class="btn btn-secondary priority-level" data-priority="medium">medium</button>
+                            <button type="button" class="btn btn-secondary priority-level" data-priority="high">high</button>
                         </div>
                     </div>
                     <!-- <input id="priority-input" placeholder="Low, Medium, High" type="text"> -->
