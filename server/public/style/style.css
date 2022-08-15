@@ -6,8 +6,10 @@ body {
 header {
     font-size: 30px;
     color: #274D5B;
-    text-shadow: 2px 2px 5px #274D5B;
-    margin-left: 10px;
+    /* text-shadow: 2px 2px 5px #274D5B; */
+    /* margin-left: 10px; */
+    background-color: #DB917C;
+    padding: 20px;
 }
 
 #content {
@@ -18,13 +20,16 @@ header {
     display: inline-flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: space-evenly;
+}
+
+#priority-group {
+    justify-content: center;
 }
 
 #due-date-input {
-    font-size: 20px;
+    font-size: 17px;
     font-family: 'american typewriter', serif;
-    background-color: lightyellow;
+    /* background-color: lightyellow; */
 }
 
 .priority-level {
@@ -34,9 +39,9 @@ header {
 
 #task-input {
     width: 400px;
-    font-size: 20px;
+    font-size: 17px;
     font-family: 'american typewriter', serif;
-    background-color: lightyellow;
+    /* background-color: lightyellow; */
 }
 
 #task-submit {
@@ -45,7 +50,8 @@ header {
 }
 
 #task-submit:hover {
-    background-color: #C6F5CB;
+    background-color: #70a876;
+    border-color: #70a876;
 }
 
 #task-submit {
@@ -81,11 +87,6 @@ header {
 [data-overdue="false"] {
     background-color: none;
 }
-
-/* [data-overdue="true"] {
-    background-color: red;
-    font-weight: bold;
-} */
 
 [data-priority="low"] {
     background-color: #F8E181;
@@ -128,19 +129,20 @@ header {
 }
 
 td {
-    padding: 2px;
+    padding: 5px;
     text-align: center;
 }
 
 th {
     font-size: 20px;
     text-align: center;
+    background-color: lightgray;
+    border-bottom: #274D5B;
 }
 
-/* #table-content {
-    display: flex;
-    justify-content: center;
-} */
+#table-content {
+    padding: 10px;
+}
 
 /* Copied from getboostrap.com responsive breakpoints documentation 
 to enable app to repond to changes in browser window size. */
