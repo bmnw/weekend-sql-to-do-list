@@ -13,10 +13,12 @@ header {
 #content {
     margin-left: 10px;
 }
+
 #user-entry {
     display: inline-flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: space-evenly;
 }
 
 #due-date-input {
@@ -138,13 +140,21 @@ th {
 to enable app to repond to changes in browser window size. */
 
  /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) { ... }
+ @media (min-width: 576px) { body {
+    background-color: olive;
+ } }
 
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { ... }
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { ... }
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { ... }
+ /* Medium devices (tablets, 768px and up) */
+ @media (min-width: 768px) { body {
+    background-color: tan;
+ } }
+ 
+ /* Large devices (desktops, 992px and up) */
+ @media (min-width: 992px) { body {
+    background-color: lightgrey;
+ } }
+ 
+ /* Extra large devices (large desktops, 1200px and up) */
+ @media (min-width: 1200px) { body {
+    background-color: thistle;
+ } }

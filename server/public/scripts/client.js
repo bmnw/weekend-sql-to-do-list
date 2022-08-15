@@ -86,11 +86,11 @@ function displayTasks() {
                         <td class="task-des-display">${task.task_description}</td>
                         <td data-priority="${task.priority}">${task.priority}</td>
                         <td>
-                            <button class="complete-submit" data-id=${task.id}>Completed it!</button>
+                            <button type="button" class="btn btn-success complete-submit" data-id=${task.id}>Completed it!</button>
                         </td>
                         <td></td>
                         <td>
-                            <button class="delete-submit" data-id=${task.id}>Delete Task</button>
+                            <button type="button" class="btn btn-danger delete-submit" data-id=${task.id}>Delete Task</button>
                         </td>
                     </tr>
                 `);

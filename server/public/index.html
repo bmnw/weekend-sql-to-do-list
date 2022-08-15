@@ -16,18 +16,20 @@
             <h1>Track Your To-Do's!</h1>
         </header>
         <div id="content">
+
             <h5>* Denotes a required field</h5>
+
             <div id="user-entry">
                 
                 <input id="task-input" placeholder="*What do you need to get done?" type="text">
                 <h3>*Due Date</h3>
                 <input id="due-date-input" placeholder="YYYY/MM/DD" type="text">
                 <h3>*Priority</h3>
-                <button class="priority-level" data-priority="low">Low</button>
-                <button class="priority-level" data-priority="medium">Medium</button>
-                <button class="priority-level" data-priority="high">High</button>
+                <button type="button" class="btn btn-secondary priority-level" data-priority="low">Low</button>
+                <button type="button" class="btn btn-secondary priority-level" data-priority="medium">Medium</button>
+                <button type="button" class="btn btn-secondary priority-level" data-priority="high">High</button>
                 <!-- <input id="priority-input" placeholder="Low, Medium, High" type="text"> -->
-                <button id="task-submit">Add Task</button>
+                <button type="button" class="btn btn-primary btn-lg" id="task-submit">Add Task</button>
             </div>
 
             <table id="task-table">
