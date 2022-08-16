@@ -1,12 +1,12 @@
 # PROJECT NAME
 
-Track Your Tasks!
+One Thing At A Time
 
 ## Description
 
 _Duration: 2 Weeks_
 
-Track Your Tasks! provides the user with an app that records tasks and tracks their respective due dates.
+One Thing At A Time provides the user with an app that records tasks and tracks their respective due dates.
 
 The user provides three inputs: the task to complete, the due date, and the priority level of the task (low, medium, high). All inputs are required. 
 
@@ -20,17 +20,15 @@ To delete a task from the list, the user can click 'Delete Task'. Clicking 'Dele
 
 ## Screen Shot
 
-![Track Your Tasks! example task list screenshot](images/Track%20Your%20Tasks!%20ex%20task%20list.png)
+![One Thing At A Time example task list screenshot](images/One%20Things%20At%20A%20Time%20ex%20task%20list.png)
 
-![Track Your Tasks! delete comfirmation screenshot](images/Track%20Your%20Tasks!%20delete%20confirmation.png)
+![One Thing At A Time delete comfirmation screenshot](images/One%20Thing%20At%20A%20Time%20delete%20confirmation.png)
 
 ### Prerequisites
 
-Link to software that is required to install the app (e.g. node).
-
 - [Node.js](https://nodejs.org/en/)
-- nodemon
-- Express
+- [nodemon] (https://nodemon.io/)
+- [Express] (https://expressjs.com/)
 - [PostgresSQL] (https://www.postgresql.org/download/)
 
 ## Installation
@@ -45,10 +43,22 @@ Link to software that is required to install the app (e.g. node).
 
 ## Usage
 
-When you're feeling overwhelmed by your day or your week, it can be hard start actually working on things. In the moments, making a list of what you have to do can help immensely! 
+When you're feeling overwhelmed by your day or your week, it can be hard start actually working on things. In those moments, making a list of what you need to do can help immensely! 
 
-Track Your Tasks! is a low-stress, simple way of keeping track of what needs to get done. Describe the task, enter the due date, click the priority level, and add the task. You'll see all of your entries being added to the list on your screen. Later you can update the list when you've completed a task. You can also delete a task from the list if it's no longer needed. 
+One Thing At A Time is a low-stress, simple way of keeping track of what needs to get done. Describe the task, enter the due date, click the priority level, and add the task. You'll see all of your entries being added to the list on your screen. Later you can update the list when you've completed a task. You can also delete a task from the list if it's no longer needed. 
 
-Sometime life happens and we overlook things. Track Your Tasks! checks daily for overdue tasks and will indicate if there is something that needs your attention. 
+Sometime life happens and we overlook things. One Thing At A Time checks daily for overdue tasks and will indicate if there is something that needs your attention. 
 
-So take a deep breath. You've got this. Take a few minutes to make a list in Track Your Tasks! and get after it!
+So take a deep breath. You've got this. Take a few minutes to make a list, and then focus on One Thing At A Time.
+
+## Built With
+
+- HTML
+- CSS
+- JavaScript
+- Node
+- Express
+- PostgreSQL
+- Postico
+- Sweet Alerts
+- Bootstrap
