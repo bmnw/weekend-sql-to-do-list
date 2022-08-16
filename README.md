@@ -29,7 +29,7 @@ To delete a task from the list, the user can click 'Delete Task'. Clicking 'Dele
 - [Node.js](https://nodejs.org/en/)
 - [nodemon](https://nodemon.io/)
 - [Express](https://expressjs.com/)
-- [PostgresSQL](https://www.postgresql.org/download/)
+- [Postgres](https://www.postgresql.org/download/)
 
 ## Installation
 
