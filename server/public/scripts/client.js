@@ -4,6 +4,7 @@ $(readyNow);
 
 function readyNow() {
     console.log('ready now');
+    updateTodaysDate();
     displayTasks();
     // swal("Hello world!");
     $('.priority-level').on('click', selectPriorityLevel);
@@ -131,6 +132,21 @@ function displayTasks() {
         alert('Something went wrong. Please try again.');
     });
 } // end displayTasks
+
+// put request that updates "todays_date" for all tasks in the database
+
+function updateTodaysDate() {
+    console.log('in updateTodaysDate');
+    $.ajax({
+        type: 'PUT',
+        url: '/todaysDate'
+    }).then( function(response) {
+        console.log(response);
+    }).catch( function(error) {
+        console.log(error);
+        alert('Something went wrong in updating the current date');
+    });
+}
 
 // put request that checks to see if any of the tasks are overdue
 

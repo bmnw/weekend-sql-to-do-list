@@ -31,8 +31,7 @@ Link to software that is required to install the app (e.g. node).
 - [Node.js](https://nodejs.org/en/)
 - nodemon
 - Express
-- Postico
-- PostgresSQL
+- [PostgresSQL] (https://www.postgresql.org/download/)
 
 ## Installation
 

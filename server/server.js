@@ -13,7 +13,8 @@ app.use('/tasks', taskRouter);
 const overdueRouter = require('./routes/overdue.router.js');
 app.use('/overdue', overdueRouter);
 
-
+const updateTodaysDate = require('./routes/updateTodaysDate.router.js');
+app.use('/todaysDate', updateTodaysDate);
 
 app.listen(PORT, () => {
     console.log('listening on port', PORT);
