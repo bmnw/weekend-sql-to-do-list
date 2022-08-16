@@ -89,7 +89,9 @@ function displayTasks() {
                         <td>
                             <button type="button" class="btn btn-success complete-submit" data-id=${task.id}>Completed it!</button>
                         </td>
-                        <td></td>
+                        <td>
+                            <button type="button" class="btn btn-info text-white disabled">Not Done Yet.</button>
+                        </td>
                         <td>
                             <button type="button" class="btn btn-danger delete-submit" data-id=${task.id}>Delete Task</button>
                         </td>
@@ -103,7 +105,9 @@ function displayTasks() {
                         <td>
                             <button type="button" class="btn btn-success complete-submit" data-id=${task.id}>Completed it!</button>
                         </td>
-                        <td></td>
+                        <td>
+                            <button type="button" class="btn btn-info text-white disabled">Not Done Yet.</button>
+                        </td>
                         <td>
                             <button type="button" class="btn btn-danger delete-submit" data-id=${task.id}>Delete Task</button>
                         </td>
